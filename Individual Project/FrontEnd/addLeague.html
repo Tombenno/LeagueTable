@@ -1,0 +1,52 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+        crossorigin="anonymous">
+
+    <link rel="stylesheet" href="styles/home.css">
+</head>
+
+<body>
+    <h1>Add New League</h1>
+    <h2>Complete The Form Below</h2>
+    <div></div>
+    <div id="addLeagueForm">
+        <div class="form-group">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">League Name: </span>
+                </div>
+                <input type="text" class="form-control" placeholder="Choose League Name..." aria-label="Username" aria-describedby="basic-addon1" id="leagueName">
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <label class="input-group-text" for="inputGroupSelect01">Select Amount Of Teams: </label>
+                </div>
+                <select class="custom-select" id="numOfTeams" onchange="refreshForm()">
+    <option selected>Choose...</option>
+
+    <option value="4">4</option>
+    <option value="6">6</option>
+    <option value="8">8</option>
+    <option value="10">10</option>
+    <option value="12">12</option>
+    <option value="14">14</option>
+    <option value="16">16</option>
+    <option value="18">18</option>
+    <option value="20">20</option>
+    <option value="22">22</option>
+    <option value="24">24</option>
+  </select>
+            </div>
+
+            <div id="main"></div>
+        </div>
+        <button id="submit" class="btn btn-success btn" onclick="completeForm()">Submit</button>
+    </div>
+    <script src="./addLeague.js"></script>
+
+    <button class="btn btn-success w-25" type="button" onclick="back()">Back</button>
+</body>
+
+</html>

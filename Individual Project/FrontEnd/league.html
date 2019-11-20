@@ -1,0 +1,73 @@
+<html>
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/league.css">
+    <div id="title"></div>
+</head>
+
+<body>
+
+    <div>
+        <table class="table table-dark" id="leagueTable">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">MP</th>
+                    <th scope="col">W</th>
+                    <th scope="col">D</th>
+                    <th scope="col">L</th>
+                    <th scope="col">GF</th>
+                    <th scope="col">GA</th>
+                    <th scope="col">GD</th>
+                    <th scope="col" id="pointsColumn">P</th>
+                </tr>
+            </thead>
+            <tbody id="leagueBody"></tbody>
+        </table>
+
+    </div>
+
+    <div>
+        <div class="card text-white text-center bg-dark mb-3">
+            <h5 class="card-header">Add a Result</h5>
+            <div class="card-body">
+                <h5 class="card-title">Select the Teams</h5>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text text-white bg-secondary" for="homeTeams">Home</label>
+                        </div>
+                        <select class="custom-select" id="homeTeams" onchange="checkSubmit()">
+                            <option selected>Choose Team...</option>
+                        </select>
+                        <select class="custom-select" id="awayTeams" onchange="checkSubmit()">
+                            <option selected>Choose Team...</option>
+                        </select>
+                        <div class="input-group-append">
+                            <label class="input-group-text text-white bg-secondary" for="awayTeams">Away</label>
+                        </div>
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text text-white bg-secondary" id="homeScoreText">Home Score</span>
+                        </div>
+                        <input type="number" min=0 class="form-control" onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48" placeholder="Enter Home Score..." id="homeScoreSelected" onchange="checkSubmit()">
+
+                        <input type="number" min=0 class="form-control" onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48" placeholder="Enter Away Score..." id="awayScoreSelected" onchange="checkSubmit()">
+                        <div class="input-group-append">
+                            <span class="input-group-text text-white bg-secondary" id="awayScoreText">Away Score</span>
+                        </div>
+                    </div>
+            </div>
+            <button type="button" class= "btn btn-lg btn-success" disabled id="submitButton" onclick="submitResult()">Submit</button>
+            <br>
+        </div>
+    </div>
+
+    <script src="./league.js"></script>
+
+    <button class="btn btn-success btn-lg w-25" type="button" onclick="back()">Back</button>
+</body>
+<div style="margin-bottom: 80px;"></div>
+</html>
